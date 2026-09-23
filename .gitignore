@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data — caches, market data, and the agent chat database are runtime state
+data/
+!data/.gitkeep
+
+# Outputs — analysis runs and learning memory are runtime state
+outputs/*
+!outputs/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# Model weights (large local artifacts)
+models/
+
+# Test artifacts / screenshots
+test-results/
+
+# Runtime pid files
+.run/
+*.pid
+
+# Backups
+*.bak
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Distribution
+*.tar.gz
+*.zip
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/_t
+
+# Agent pane storage
+data/agent.db
