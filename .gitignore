@@ -38,8 +38,8 @@ ENV/
 Thumbs.db
 
 # Data — caches, market data, and the agent chat database are runtime state
-data/
-!data/.gitkeep
+/data/
+!/data/.gitkeep
 
 # Outputs — analysis runs and learning memory are runtime state
 outputs/*
