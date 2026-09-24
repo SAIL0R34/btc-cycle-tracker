@@ -1,6 +1,9 @@
-"""Validation script for BTC Swing Cycle Tracker.
+"""Manual validation script for BTC Swing Cycle Tracker.
 
-Tests the current implementation with synthetic data to identify issues.
+Runs the pivot/leg/stats pipeline against synthetic price data and prints
+what it finds — a quick smoke check outside the pytest suite. The
+authoritative coverage lives in tests/; this script is for poking at the
+pipeline by hand.
 """
 
 import asyncio
