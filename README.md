@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)]
 [![React 19](https://img.shields.io/badge/frontend-React%2019-61dafb.svg)](https://react.dev)
-[![Tests](https://img.shields.io/badge/tests-106%20passing-brightgreen.svg)](#testing)
+[![CI](https://github.com/SAIL0R34/btc-cycle-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/SAIL0R34/btc-cycle-tracker/actions/workflows/ci.yml)
 
 ![Dashboard — summary tiles, decision engine, and the chart with ZigZag legs and Bollinger Bands](docs/dashboard.png)
 
@@ -55,7 +55,7 @@ cd btc-cycle-tracker
 
 # Python environment
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e . && pip install "fastapi>=0.110" "uvicorn>=0.29"
+pip install -e .
 
 # Web app (builds the React frontend on first run, then serves)
 ./serve.sh
@@ -63,7 +63,9 @@ pip install -e . && pip install "fastapi>=0.110" "uvicorn>=0.29"
 ```
 
 The dashboard auto-runs an analysis on first load. Press `R` to re-run, or ask the agent in
-the bottom-right corner. Set `BTC_HOST=0.0.0.0` before `./serve.sh` to expose it on your LAN.
+the bottom-right corner. Set `BTC_HOST=0.0.0.0` before `./serve.sh` to expose it on your LAN —
+note the server is unauthenticated by design (it can change config and write exports), so
+only do this on networks you trust.
 
 ### Command line
 
@@ -113,7 +115,8 @@ walk-forward replay, and the learning loop — is documented in
 ## Testing
 
 ```bash
-pytest                # 106 tests
+pip install -e ".[test]"   # pytest (+ the dev toolchain is in ".[dev]")
+pytest                     # full suite — offline, synthetic data only
 pytest --cov=src --cov-report=html
 ```
 
