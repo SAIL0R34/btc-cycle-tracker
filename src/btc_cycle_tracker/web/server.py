@@ -310,11 +310,7 @@ class AgentChatRequest(BaseModel):
 def _persist_chat_message(role: str, content: str) -> None:
     if not content:
         return
-    with agent_db.connect() as conn:
-        conn.execute(
-            "INSERT INTO agent_chat_messages (role, content) VALUES (?, ?)",
-            (role, content),
-        )
+    agent_db.add_chat_message(role, content)
 
 
 @app.get("/api/agent/chat/history")
